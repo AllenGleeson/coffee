@@ -1,0 +1,12 @@
+#logo{
+    width: 100px;
+}
+
+.navbar-nav{
+    display: flex;
+    flex-direction: inherit;
+}
+
+.nav-item{
+    margin: 20px;
+}

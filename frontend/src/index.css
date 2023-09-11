@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slideLeft{
+  animation: 2s ease-out 0s 1 slideInLeft;
+}
+
+.slideRight{
+  animation: 1s ease-out 0s 1 slideInRight;
+}
+
+@keyframes slideInLeft {
+  0% {
+      transform: translateX(-200%);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+      transform: translateX(+100%);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}

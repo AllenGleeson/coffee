@@ -1,0 +1,11 @@
+.menu ul{
+    background-color: #fdffe0;
+    padding: 10px;
+}
+
+.menu li{
+    list-style-type: none;
+    letter-spacing: 4px;
+    font-size: 1.3rem;
+    padding: 15px;
+}
