@@ -63,3 +63,7 @@
     background: radial-gradient(#04040491, #464646db);
     padding: 30px;
 }
+
+#videoplayer iframe{
+    width: 100%;
+}
