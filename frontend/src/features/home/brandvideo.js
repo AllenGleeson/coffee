@@ -1,6 +1,4 @@
 import React from 'react'
-import '../../assests/css/home.css'
-
 import VimeoPlayer from './autoplayvideo'
 import SpecialtyCoffeeInfo from './specialtycoffeeinfo'
 

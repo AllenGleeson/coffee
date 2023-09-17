@@ -1,5 +1,5 @@
 import React from 'react'
-import temp from '../../assests/temp.webp'
+import temp from '../../assets/temp.webp'
 
 const Jumbotron = () => {
     return (

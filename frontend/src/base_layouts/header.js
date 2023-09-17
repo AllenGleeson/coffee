@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar, Nav, NavItem, NavLink } from 'react-bootstrap';
-import logo from '../assests/logo.PNG'
-import '../assests/css/nav.css'
+import logo from '../assets/logo.PNG'
+import '../assets/css/nav.css'
 
 const Header = () => {
 

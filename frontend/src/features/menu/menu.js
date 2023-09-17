@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import '../../assests/css/menu.css'
 import { fetchMenuItems } from '../../api'; // Import your fetch function
 
 function Menu() {

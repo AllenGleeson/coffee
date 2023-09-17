@@ -37,7 +37,7 @@
 .about-left {
     top: 0;
     right: 0;
-    background-image: url('../../assests/temp.webp'); /* Update with your image URL */
+    background-image: url('../../assets/temp.webp'); /* Update with your image URL */
     background-size: cover;
     background-position: center center;
 }
@@ -49,19 +49,9 @@
     padding: 30px;
 }
 
-.about-right {
-    bottom: 0;
-    left: 0;
-    background-image: url('../../assests/temp.webp'); /* Update with your image URL */
-    background-size: cover;
-    background-position: center center;
-}
-
-.about-right article {
-    top: 50px;
-    left: 100px;
-    background: radial-gradient(#04040491, #464646db);
-    padding: 30px;
+.map-container{
+    height: 100%;
+    width: 100%;
 }
 
 #videoplayer iframe{
