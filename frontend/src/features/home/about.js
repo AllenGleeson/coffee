@@ -2,7 +2,7 @@ import React from 'react';
 import Map from './map';
 import { useLoadScript } from '@react-google-maps/api';
 
-const googleMapsApiKey="AIzaSyA4goDoxsaCW4gMIkitRO100lWVXO6WPUs";
+const googleMapsApiKey="";
 console.log(googleMapsApiKey);
 const About = () => {
   const { isLoaded, loadError } = useLoadScript({
