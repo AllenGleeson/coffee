@@ -8,7 +8,7 @@ export default function RootLayout(props) {
   return (
     <div className='root-layout'>
       <Header />
-      <main className='container'>
+      <main>
         <Outlet />
       </main>
       <Footer />
