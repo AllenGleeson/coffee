@@ -4,8 +4,8 @@ import Jumbotron from '../features/home/jumbotron';
 import BrandVideo from '../features/home/brandvideo';
 import About from '../features/home/about';
 import BrandImage from '../features/home/brandimage';
-import Book from '../features/home/book'
-import Coffees from '../features/home/coffees'
+import Book from '../features/home/book';
+import CoffeePreview from '../features/home/coffeePreview';
 
 
 
@@ -13,7 +13,7 @@ const Home = () => {
     return (
         <div>
             <Jumbotron />
-            <Coffees />
+            <CoffeePreview />
             <Book />
             <BrandVideo />
             <BrandImage />
