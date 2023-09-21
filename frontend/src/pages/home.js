@@ -6,6 +6,7 @@ import About from '../features/home/about';
 import BrandImage from '../features/home/brandimage';
 import Book from '../features/home/book';
 import CoffeePreview from '../features/home/coffeePreview';
+import MyCarousel from '../features/home/carousel';
 
 
 
@@ -13,6 +14,7 @@ const Home = () => {
     return (
         <div>
             <Jumbotron />
+            <MyCarousel />
             <CoffeePreview />
             <Book />
             <BrandVideo />
