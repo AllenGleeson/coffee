@@ -7,7 +7,7 @@ import BrandImage from '../features/home/brandimage';
 import Book from '../features/home/book';
 import CoffeePreview from '../features/home/coffeePreview';
 import MyCarousel from '../features/home/carousel';
-import MyComponent from '../features/home/testcomp';
+import axios from 'axios';
 
 const Home = () => {
   // State to hold the fetched data
@@ -15,10 +15,10 @@ const Home = () => {
 
   useEffect(() => {
     // Fetch data from the Django backend when the component mounts
-    fetch('http://localhost:8000/') // Replace with the correct API endpoint
-      .then((response) => response.json())
-      .then((fetchedData) => {
-        setData(fetchedData);
+    axios.get('http://localhost:8000/') // Replace with the correct API endpoint
+      .then((response) => {
+        console.log('Fetched Data:', response.data); // Log the fetched data
+        setData(response.data);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
@@ -27,14 +27,13 @@ const Home = () => {
 
   return (
     <div>
-      <Jumbotron />
-      <MyComponent data={data.key1} />
+      <Jumbotron heading={data.jumbotron && data.jumbotron.heading} subheading={data.jumbotron && data.jumbotron.subheading} />
       <MyCarousel />
       <CoffeePreview />
       <Book />
       <BrandVideo />
       <BrandImage />
-      <About />
+      <About description={data.about && data.about.description} lat={data.about && data.about.lat} lng={data.about && data.about.lng}/>
     </div>
   );
 };

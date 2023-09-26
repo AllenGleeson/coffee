@@ -7,8 +7,8 @@ class MyComponent extends Component {
     return (
       <div>
         {/* Render your React components using the data */}
-        <p>Data key1: {data}</p>
-        <p>Data key2: {data}</p>
+        <p>Data key1: {data.heading}</p>
+        <p>Data key2: {data.subheading}</p>
         {/* Add more rendering logic as needed */}
       </div>
     );

@@ -1,10 +1,10 @@
 import React, { useMemo, useState } from "react";
 import { GoogleMap, Marker, InfoWindow } from "@react-google-maps/api";
 
-function Map() {
+function Map({ lat, lng }) {
   const [markerInfo, setMarkerInfo] = useState(null);
 
-  const center = useMemo(() => ({ lat: 53.628166, lng: -6.261559 }), []);
+  const center = useMemo(() => ({ lat, lng }), [lat, lng]);
 
   const handleMarkerClick = () => {
     // Set the marker info when clicked
