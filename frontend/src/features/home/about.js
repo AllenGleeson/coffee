@@ -2,9 +2,9 @@ import React from 'react';
 import Map from './map';
 import { useLoadScript } from '@react-google-maps/api';
 
-const googleMapsApiKey="";
+const googleMapsApiKey = "";
 console.log(googleMapsApiKey);
-const About = ({description, lat, lng}) => {
+const About = ({ description, lat, lng }) => {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey,
   });
@@ -22,7 +22,7 @@ const About = ({description, lat, lng}) => {
         </div>
       </div>
       <div id='location' className='col-6 position-relative slideRight'>
-        {isLoaded ? <Map lat={lat} lng={lng}/> : <div>Loading Map...</div>}
+        {isLoaded ? <Map lat={lat} lng={lng} /> : <div>Loading Map...</div>}
       </div>
     </section>
   );
