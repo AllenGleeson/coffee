@@ -28,12 +28,35 @@ const Home = () => {
   return (
     <div>
       <Jumbotron heading={data.jumbotron && data.jumbotron.heading} subheading={data.jumbotron && data.jumbotron.subheading} />
-      <MyCarousel />
-      <CoffeePreview />
+      <MyCarousel
+        heading={data.coffeeinfo && data.coffeeinfo.heading}
+        subheading1={data.coffeeinfo && data.coffeeinfo.subheading1}
+        img1={data.coffeeinfo && data.coffeeinfo.img1}
+        subheading2={data.coffeeinfo && data.coffeeinfo.subheading2}
+        img2={data.coffeeinfo && data.coffeeinfo.img2}
+        subheading3={data.coffeeinfo && data.coffeeinfo.subheading3}
+        img3={data.coffeeinfo && data.coffeeinfo.img3}
+        description={data.coffeeinfo && data.coffeeinfo.description}
+      />
+      <CoffeePreview
+        heading={data.coffeeinfo && data.coffeeinfo.heading}
+        subheading1={data.coffeeinfo && data.coffeeinfo.subheading1}
+        img1={data.coffeeinfo && data.coffeeinfo.img1}
+        subheading2={data.coffeeinfo && data.coffeeinfo.subheading2}
+        img2={data.coffeeinfo && data.coffeeinfo.img2}
+        subheading3={data.coffeeinfo && data.coffeeinfo.subheading3}
+        img3={data.coffeeinfo && data.coffeeinfo.img3}
+        description={data.coffeeinfo && data.coffeeinfo.description}
+      />
       <Book />
       <BrandVideo />
+      {/* <BrandVideo
+        heading={data.brandvideo && data.brandvideo.heading}
+        description={data.brandvideo && data.brandvideo.description}
+        video={data.brandvideo && data.brandvideo.video}
+      /> */}
       <BrandImage />
-      <About description={data.about && data.about.description} lat={data.about && data.about.lat} lng={data.about && data.about.lng}/>
+      <About description={data.about && data.about.description} lat={data.about && data.about.lat} lng={data.about && data.about.lng} />
     </div>
   );
 };
