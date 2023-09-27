@@ -1,5 +1,5 @@
-from django.db import models
-from .models.about import About
-from .models.jumbotron import Jumbotron
-from .models.brandvideo import BrandVideo
+from .data.about import About
+from .data.jumbotron import Jumbotron
+from .data.brandvideo import BrandVideo
+from .data.coffeeinfo import CoffeeInfo
 # Create your models here.

@@ -1,36 +1,39 @@
 from django.http import JsonResponse
+from .models import About, CoffeeInfo, Jumbotron, BrandVideo
 
 def index(request):
     """ A view to return JSON data """
-    jumbotrondata = {
-        'heading': 'Welcome To Hot Drinks',
-        'subheading': 'Swing by sometime to have a delicious brew.'
-    }
-    coffeeinfodata = {
-        'heading': 'The best coffee shop',
-        'subheading1': 'Best beans 1',
-        'img1': 'https://image.ibb.co/n5gUtm/icon_1.png',
-        'subheading2': 'Best beans 2',
-        'img2': 'https://image.ibb.co/dwEXDm/icon_2.png',
-        'subheading3': 'Best beans 3',
-        'img3': 'https://image.ibb.co/j5Og66/icon_3.png',
-        'description': 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, omnis iste natus error sit voluptatem accusantium doloremque, totam rem aperiam, voluptatem accusantium doloremque.'
-    }
-    # brandvideodata = {
-    #     'heading': 'The best Specialty Coffee',
-    #     'description': 'Swing by sometime to have a delicious brew.',
-    #     'video': '563161697'
-    # }
-    aboutdata = {
-        'description': "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.",
-        'lat': 53.628166,
-        'lng': -6.261559
-    }
+    
+    # Query data from your models
+    jumbotrondata = Jumbotron.objects.first()  # Assuming you want the first Jumbotron entry
+    aboutdata = About.objects.first()  # Assuming you want the first About entry
+    coffeeinfodata = CoffeeInfo.objects.all()  # Get all CoffeeInfo entries
+    brandvideodata = BrandVideo.objects.first()  # Assuming you want the first BrandVideo entry
+    
+    # Create a dictionary to hold the data
     data = {
-        'jumbotron': jumbotrondata,
-        'coffeeinfo': coffeeinfodata,
-        # 'brandvideo': brandvideodata,
-        'about': aboutdata
+        'jumbotron': {
+            'heading': jumbotrondata.heading if jumbotrondata else None,
+            'subheading': jumbotrondata.subheading if jumbotrondata else None
+        },
+        'about': {
+            'description': aboutdata.description if aboutdata else None,
+            'lat': aboutdata.lat if aboutdata else None,
+            'lng': aboutdata.lng if aboutdata else None
+        },
+        'coffeeinfo': [
+            {
+                'heading': item.heading if item else None,
+                'subheading': item.subheading if item else None,
+                'img': item.img if item else None
+            }
+            for item in coffeeinfodata
+        ],
+        'brandvideo': {
+            'heading': brandvideodata.heading if brandvideodata else None,
+            'description': brandvideodata.description if brandvideodata else None,
+            'url': brandvideodata.url if brandvideodata else None
+        }
     }
 
     return JsonResponse(data)

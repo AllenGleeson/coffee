@@ -30,22 +30,14 @@ const Home = () => {
       <Jumbotron heading={data.jumbotron && data.jumbotron.heading} subheading={data.jumbotron && data.jumbotron.subheading} />
       <MyCarousel
         heading={data.coffeeinfo && data.coffeeinfo.heading}
-        subheading1={data.coffeeinfo && data.coffeeinfo.subheading1}
-        img1={data.coffeeinfo && data.coffeeinfo.img1}
-        subheading2={data.coffeeinfo && data.coffeeinfo.subheading2}
-        img2={data.coffeeinfo && data.coffeeinfo.img2}
-        subheading3={data.coffeeinfo && data.coffeeinfo.subheading3}
-        img3={data.coffeeinfo && data.coffeeinfo.img3}
+        subheading={data.coffeeinfo && data.coffeeinfo.subheading}
+        img={data.coffeeinfo && data.coffeeinfo.img}
         description={data.coffeeinfo && data.coffeeinfo.description}
       />
       <CoffeePreview
         heading={data.coffeeinfo && data.coffeeinfo.heading}
-        subheading1={data.coffeeinfo && data.coffeeinfo.subheading1}
-        img1={data.coffeeinfo && data.coffeeinfo.img1}
-        subheading2={data.coffeeinfo && data.coffeeinfo.subheading2}
-        img2={data.coffeeinfo && data.coffeeinfo.img2}
-        subheading3={data.coffeeinfo && data.coffeeinfo.subheading3}
-        img3={data.coffeeinfo && data.coffeeinfo.img3}
+        subheading={data.coffeeinfo && data.coffeeinfo.subheading}
+        img={data.coffeeinfo && data.coffeeinfo.img}
         description={data.coffeeinfo && data.coffeeinfo.description}
       />
       <Book />

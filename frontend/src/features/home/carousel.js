@@ -4,18 +4,14 @@ import CoffeePreview from './coffeePreview';
 
 
 
-const MyCarousel = ({ heading, subheading1, img1, subheading2, img2, subheading3, img3, description }) => {
+const MyCarousel = ({ heading, subheading, img, description }) => {
     return (
         <Carousel interval={null}>
             <Carousel.Item>
                 <CoffeePreview
                     heading={heading}
-                    subheading1={subheading1}
-                    img1={img1}
-                    subheading2={subheading2}
-                    img2={img2}
-                    subheading3={subheading3}
-                    img3={img3}
+                    subheading={subheading}
+                    img={img}
                     description={description}
                 />
             </Carousel.Item>
