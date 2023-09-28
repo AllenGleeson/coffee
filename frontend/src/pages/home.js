@@ -24,7 +24,6 @@ const Home = () => {
         console.error('Error fetching data:', error);
       });
   }, []);
-
   return (
     <div>
       <Jumbotron heading={data.jumbotron && data.jumbotron.heading} subheading={data.jumbotron && data.jumbotron.subheading} />
@@ -34,19 +33,13 @@ const Home = () => {
         img={data.coffeeinfo && data.coffeeinfo.img}
         description={data.coffeeinfo && data.coffeeinfo.description}
       />
-      <CoffeePreview
-        heading={data.coffeeinfo && data.coffeeinfo.heading}
-        subheading={data.coffeeinfo && data.coffeeinfo.subheading}
-        img={data.coffeeinfo && data.coffeeinfo.img}
-        description={data.coffeeinfo && data.coffeeinfo.description}
-      />
+      <CoffeePreview coffeedata={data.coffeeinfo}/>
       <Book />
-      <BrandVideo />
-      {/* <BrandVideo
+      <BrandVideo
         heading={data.brandvideo && data.brandvideo.heading}
         description={data.brandvideo && data.brandvideo.description}
-        video={data.brandvideo && data.brandvideo.video}
-      /> */}
+        url={data.brandvideo && data.brandvideo.url}
+      />
       <BrandImage />
       <About description={data.about && data.about.description} lat={data.about && data.about.lat} lng={data.about && data.about.lng} />
     </div>

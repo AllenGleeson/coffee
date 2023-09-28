@@ -3,7 +3,7 @@ import '../../assets/css/coffeeInfo.css'
 
 const CoffeeInfo = ({ heading, subheading, img, description }) => {
     return (
-        <section className="coffeeInfo-section col-7 d-flex justify-content-center align-items-center">
+        <section className="coffeeInfo-section d-flex justify-content-center align-items-center">
             <div className="container">
                 <h1 className="secttitle best--bottom sect--white-text">{heading}</h1>
                 <div className="row">

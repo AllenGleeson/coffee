@@ -1,12 +1,10 @@
 import React from 'react';
 
-const SpecialtyCoffeeInfo = () => {
+const SpecialtyCoffeeInfo = ({ heading, description }) => {
   return (
     <div className= "col-6">
-      <h2>The best Specialty Coffee</h2>
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porttitor augue a turpis porttitor maximus. Nulla luctus elementum felis, sit amet condimentum lectus rutrum eget.
-      </p>
+      <h2>{heading}</h2>
+      <p>{description}</p>
     </div>
   );
 };
