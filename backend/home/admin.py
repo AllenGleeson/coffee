@@ -1,13 +1,5 @@
 from django.contrib import admin
-from .models import CoffeeInfo, BrandVideo, Jumbotron, About
-
-@admin.register(CoffeeInfo)
-class CoffeeInfoAdmin(admin.ModelAdmin):
-    list_display = ('heading', 'subheading', 'img')
-
-@admin.register(BrandVideo)
-class BrandVideoAdmin(admin.ModelAdmin):
-    list_display = ('heading', 'description', 'url')
+from .models import Jumbotron, About, CoffeeInfo, CoffeeInfoNode, BrandVideo
 
 @admin.register(Jumbotron)
 class JumbotronAdmin(admin.ModelAdmin):
@@ -16,3 +8,15 @@ class JumbotronAdmin(admin.ModelAdmin):
 @admin.register(About)
 class AboutAdmin(admin.ModelAdmin):
     list_display = ('description', 'lat', 'lng')
+
+@admin.register(CoffeeInfo)
+class CoffeeInfoAdmin(admin.ModelAdmin):
+    list_display = ('heading', 'description')
+
+@admin.register(CoffeeInfoNode)
+class CoffeeInfoNodeAdmin(admin.ModelAdmin):
+    list_display = ('subheading', 'img')
+
+@admin.register(BrandVideo)
+class BrandVideoAdmin(admin.ModelAdmin):
+    list_display = ('heading', 'description', 'url')

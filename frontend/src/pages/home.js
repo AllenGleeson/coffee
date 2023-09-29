@@ -27,13 +27,16 @@ const Home = () => {
   return (
     <div>
       <Jumbotron heading={data.jumbotron && data.jumbotron.heading} subheading={data.jumbotron && data.jumbotron.subheading} />
-      <MyCarousel
+      {/* <MyCarousel
         heading={data.coffeeinfo && data.coffeeinfo.heading}
         subheading={data.coffeeinfo && data.coffeeinfo.subheading}
         img={data.coffeeinfo && data.coffeeinfo.img}
         description={data.coffeeinfo && data.coffeeinfo.description}
-      />
-      <CoffeePreview coffeedata={data.coffeeinfo}/>
+      /> */}
+      <CoffeePreview
+        heading={data.coffeeinfo && data.coffeeinfo.heading}
+        description={data.coffeeinfo && data.coffeeinfo.description}
+        nodes={data.coffeeinfonode && data.coffeeinfonode} />
       <Book />
       <BrandVideo
         heading={data.brandvideo && data.brandvideo.heading}

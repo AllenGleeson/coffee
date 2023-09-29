@@ -3,20 +3,20 @@ import Coffees from './coffees'
 import CoffeeInfo from './coffeeInfo';
 import '../../assets/css/coffeePreview.css'
 
-const CoffeePreview = ({ coffeedata }) => {
-    console.log("coffeedata: ",coffeedata)
+const CoffeePreview = ({ heading, description, nodes }) => {
     return (
         <section className="row sect--type">
             <div className='col-7'>
-                {coffeedata && coffeedata.map((coffee, index) => (
-                <div key={index} className='row'>
-                    <CoffeeInfo
-                        heading={coffee.heading}
-                        subheading={coffee.subheading}
-                        img={coffee.img}
-                    />
-                </div>
+                <h1 className="secttitle best--bottom sect--white-text">{heading}</h1>
+                {nodes && nodes.map((coffee, index) => (
+                    <div key={index} className='row'>
+                        <CoffeeInfo
+                            subheading={coffee.subheading}
+                            img={coffee.img}
+                        />
+                    </div>
                 ))}
+                <p className="sectsubtitle best--margin sect--white-text">{description}</p>
             </div>
             <Coffees />
         </section>
