@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Jumbotron, About, CoffeeInfo, CoffeeInfoNode, BrandVideo
+from .models import Jumbotron, About, CoffeeInfo, CoffeeInfoNode, BrandVideo, ParallaxHeader
 
 @admin.register(Jumbotron)
 class JumbotronAdmin(admin.ModelAdmin):
@@ -20,3 +20,7 @@ class CoffeeInfoNodeAdmin(admin.ModelAdmin):
 @admin.register(BrandVideo)
 class BrandVideoAdmin(admin.ModelAdmin):
     list_display = ('heading', 'description', 'url')
+
+@admin.register(ParallaxHeader)
+class ParallaxHeader(admin.ModelAdmin):
+    list_display = ('heading', 'subheading')

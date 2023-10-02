@@ -3,7 +3,7 @@ import '../assets/css/home.css';
 import Jumbotron from '../features/home/jumbotron';
 import BrandVideo from '../features/home/brandvideo';
 import About from '../features/home/about';
-import BrandImage from '../features/home/brandimage';
+import ParallaxHeader from '../features/home/parallaxHeader';
 import Book from '../features/home/book';
 import CoffeePreview from '../features/home/coffeePreview';
 import MyCarousel from '../features/home/carousel';
@@ -43,7 +43,7 @@ const Home = () => {
         description={data.brandvideo && data.brandvideo.description}
         url={data.brandvideo && data.brandvideo.url}
       />
-      <BrandImage />
+      <ParallaxHeader heading={data.parallaxheader && data.parallaxheader.heading} subheading={data.parallaxheader && data.parallaxheader.subheading} />
       <About description={data.about && data.about.description} lat={data.about && data.about.lat} lng={data.about && data.about.lng} />
     </div>
   );
