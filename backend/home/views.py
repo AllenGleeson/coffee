@@ -7,10 +7,10 @@ def index(request):
     # Query data from your models
     jumbotrondata = Jumbotron.objects.first()  # Assuming you want the first Jumbotron entry
     aboutdata = About.objects.first()  # Assuming you want the first About entry
-    coffeeinfodata = CoffeeInfo.objects.first()  # Assuming you want the first About entry
-    coffeeinfonodedata = CoffeeInfoNode.objects.all()  # Assuming you want the first About entry
+    coffeeinfodata = CoffeeInfo.objects.first()  # Assuming you want the first CoffeeInfo entry
+    coffeeinfonodedata = CoffeeInfoNode.objects.all()  # Assuming you want all CoffeeInfoNode entry
     brandvideodata = BrandVideo.objects.first()  # Assuming you want the first BrandVideo entry
-    parallaxheaderdata = ParallaxHeader.objects.first()  # Assuming you want the first BrandVideo entry
+    parallaxheaderdata = ParallaxHeader.objects.first()  # Assuming you want the first ParallaxHeader entry
     
     # Create a dictionary to hold the data
     data = {
