@@ -1,3 +1,2 @@
-from django.db import models
-
+from .data.menutable import MenuTable
 # Create your models here.
