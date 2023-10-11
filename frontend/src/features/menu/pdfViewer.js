@@ -9,8 +9,8 @@ const PDFViewer = ({ pdf }) => {
     <div>
       {pdf ? (
         <Document file={pdf}>
-          <Page pageNumber={1} />
-        </Document>
+        <Page pageNumber={1} renderTextLayer={false} renderAnnotationLayer={false} />
+      </Document>      
       ) : (
         <div>No PDF file specified.</div>
       )}
