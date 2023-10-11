@@ -1,0 +1,33 @@
+.secttitle {
+    margin-top: 0;
+    text-transform: uppercase;
+    line-height: 40px;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.sectsubtitle {
+    margin-bottom: 0;
+}
+
+.coffee {
+    padding: 0 25px;
+}
+
+.coffeename {
+    letter-spacing: 1px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.coffeeimg {
+    width: 90%;
+}
+
+.coffee__descr {
+    margin: 0;
+    line-height: 23px;
+}

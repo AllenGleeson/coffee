@@ -1,11 +1,17 @@
-.menu ul{
-    background-color: #fdffe0;
-    padding: 10px;
+.custom-table {
+    border: 2px solid #ccc; /* Add a border */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
 }
 
-.menu li{
-    list-style-type: none;
-    letter-spacing: 4px;
-    font-size: 1.3rem;
-    padding: 15px;
+.custom-table th {
+    background-color: #f2f2f2; /* Change header background color */
+}
+
+.custom-table tbody tr:hover {
+    background-color: #e6e6e6; /* Change row background color on hover */
+}
+
+.custom-table tr {
+    font-size: 1.7rem;
 }

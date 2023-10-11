@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-function BrandImage() {
+function ParallaxHeader({ heading, subheading }) {
   useEffect(() => {
     // Function to handle the scroll event
     const handleScroll = () => {
@@ -24,11 +24,11 @@ function BrandImage() {
     <div className="parallax-container">
       <div className="parallax-background"></div>
       <div className="parallax-content">
-        <h1>This is a Parallax Header</h1>
-        <p>Scroll down to see the parallax effect.</p>
+        <h1>{heading}</h1>
+        <p>{subheading}</p>
       </div>
     </div>
   );
 }
 
-export default BrandImage;
+export default ParallaxHeader;
