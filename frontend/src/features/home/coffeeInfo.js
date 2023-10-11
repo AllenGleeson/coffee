@@ -1,9 +1,9 @@
 import React from 'react';
-import '../../assets/css/coffeeInfo.css'
+import '../../assets/css/coffeeinfo.css'
 
 const CoffeeInfo = ({ subheading, img }) => {
     return (
-        <section className="coffeeInfo-section d-flex justify-content-center align-items-center">
+        <section className="coffeeinfo-section d-flex justify-content-center align-items-center">
             <div className="container">
                 <div className="row">
                     <div className="col-md-4 col-sm-4 col-xs-4">

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../assets/css/coffeeInfo.css'
+import '../../assets/css/coffeeinfo.css'
 
 const CoffeeInfoNode = ({ description }) => {
     return (

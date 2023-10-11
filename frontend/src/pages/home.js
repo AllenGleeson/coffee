@@ -3,9 +3,9 @@ import '../assets/css/home.css';
 import Jumbotron from '../features/home/jumbotron';
 import BrandVideo from '../features/home/brandvideo';
 import About from '../features/home/about';
-import ParallaxHeader from '../features/home/parallaxHeader';
+import ParallaxHeader from '../features/home/parallaxheader';
 import Book from '../features/home/book';
-import CoffeePreview from '../features/home/coffeePreview';
+import CoffeePreview from '../features/home/coffeepreview';
 import MyCarousel from '../features/home/carousel';
 import axios from 'axios';
 
