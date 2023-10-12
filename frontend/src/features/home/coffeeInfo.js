@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../assets/css/coffeeinfo.css'
+import '../../assets/css/coffeeInfo.css'
 
 const CoffeeInfo = ({ subheading, img }) => {
     return (

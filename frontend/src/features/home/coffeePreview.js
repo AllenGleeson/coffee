@@ -1,7 +1,7 @@
 import React from 'react'
 import Coffees from './coffees'
-import CoffeeInfo from './coffeeinfo';
-import '../../assets/css/coffeepreview.css'
+import CoffeeInfo from './coffeeInfo';
+import '../../assets/css/coffeePreview.css'
 
 const CoffeePreview = ({ heading, description, nodes }) => {
     return (

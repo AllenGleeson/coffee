@@ -1,6 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import CoffeePreview from './coffeepreview';
+import CoffeePreview from '../home/coffeePreview';
 
 
 
