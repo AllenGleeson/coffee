@@ -18,11 +18,9 @@ const Home = () => {
     // Fetch data from the Django backend when the component mounts
     axios.get('http://localhost:8000/') // Replace with the correct API endpoint
       .then((response) => {
-        console.log('Fetched Data:', response.data); // Log the fetched data
         setData(response.data);
       })
       .catch((error) => {
-        console.error('Error fetching data:', error);
       });
   }, []);
   return (

@@ -4,20 +4,38 @@ import Vimeo from '@vimeo/player';
 const VimeoPlayer = ({ videoId }) => {
   const playerRef = useRef(null);
 
+  // Set the data-vimeo-id attribute based on the videoId prop
   useEffect(() => {
-    // Create a new Vimeo player instance
-    const player = new Vimeo(playerRef.current, {
-      id: videoId,
-      autoplay: true, // Autoplay the video
-      loop: true,     // Disable looping (optional)
-      muted: true,    // Unmute the video (optional)
-      controls: false, // Hide player controls (optional)
-      title: false,    // Hide video title (optional)
-    });
+    if (playerRef.current && videoId) {
+      playerRef.current.setAttribute('data-vimeo-id', videoId);
+    }
+  }, [videoId]);
+
+  useEffect(() => {
+    let player;
+
+    try {
+      // Check if videoId is defined before creating the player instance
+      if (videoId) {
+        // Attempt to create a new Vimeo player instance
+        player = new Vimeo(playerRef.current, {
+          autoplay: true,
+          loop: true,
+          muted: true,
+          controls: false,
+          title: false,
+        });
+      }
+    } catch (error) {
+      // Do nothing with the error, just catch it to suppress the error message
+    }
 
     // Cleanup when the component unmounts
     return () => {
-      player.destroy();
+      // Ensure player is defined before calling destroy
+      if (player) {
+        player.destroy();
+      }
     };
   }, [videoId]);
 

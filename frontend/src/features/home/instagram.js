@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Instafeed from 'instafeed.js';
+import '../../assets/css/instafeed.css'
 
 function InstagramFeed() {
     const template = `
@@ -18,7 +19,7 @@ function InstagramFeed() {
             template: template, // Customize the template as needed
             get: 'user', // Use 'user' to avoid duplicates
         });
-        console.log(feed)
+
         // Run Instafeed to fetch and display Instagram posts
         feed.run();
     }, []);

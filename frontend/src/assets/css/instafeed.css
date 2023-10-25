@@ -1,0 +1,7 @@
+#instafeed{
+    display: flex;
+}
+
+#instafeed img{
+    width: 100%;
+}
