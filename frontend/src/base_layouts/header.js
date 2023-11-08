@@ -1,34 +1,52 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navbar, Nav, NavItem, NavLink } from 'react-bootstrap';
-import logo from '../assets/logo.PNG'
-import '../assets/css/nav.css'
+import logo from '../assets/logo.PNG';
+import '../assets/css/nav.css';
 
 const Header = () => {
+  const [scrolling, setScrolling] = useState(false);
+
+  useEffect(() => {
+    // Function to handle scroll events
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        // Add the white-background class when scrolling
+        setScrolling(true);
+      } else {
+        // Remove the white-background class when at the top
+        setScrolling(false);
+      }
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up the listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Define a CSS class based on the scrolling state
+  const headerClass = scrolling ? 'bg-nav white-background' : 'bg-nav';
 
   return (
-    <header>
-        <Navbar className='bg-nav flex-nowrap justify-content-between' id='nav'>
-            <Navbar.Brand href="/">
-                <img id="logo" src={logo} alt="logo" />
-            </Navbar.Brand>
-            <Nav>
-                <NavItem>
-                    <NavLink href="/">
-                        HOME
-                    </NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink href="/menu">
-                        MENU
-                    </NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink href="/contact">
-                        CONTACT
-                    </NavLink>
-                </NavItem>
-            </Nav>
-        </Navbar>
+    <header className='fixed-top'>
+      <Navbar className={headerClass} id="nav">
+        <Nav className="left">
+          <NavItem>
+            <NavLink href="/menu">MENU</NavLink>
+          </NavItem>
+        </Nav>
+        <Navbar.Brand href="/">
+          <img id="logo" src={logo} alt="logo" />
+        </Navbar.Brand>
+        <Nav className="right">
+          <NavItem>
+            <NavLink href="/contact">CONTACT</NavLink>
+          </NavItem>
+        </Nav>
+      </Navbar>
     </header>
   );
 };

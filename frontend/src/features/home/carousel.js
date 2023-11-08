@@ -1,25 +1,19 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import CoffeePreview from '../home/coffeePreview';
+import myImage from '../../assets/temp.webp';
 
 
-
-const MyCarousel = ({ heading, subheading, img, description }) => {
+const MyCarousel = () => {
     return (
         <Carousel interval={null}>
             <Carousel.Item>
-                <CoffeePreview
-                    heading={heading}
-                    subheading={subheading}
-                    img={img}
-                    description={description}
-                />
+                <img src={myImage} />
             </Carousel.Item>
             <Carousel.Item>
-                <CoffeePreview />
+                <img src={myImage} />
             </Carousel.Item>
             <Carousel.Item>
-                <CoffeePreview />
+                <img src={myImage} />
             </Carousel.Item>
         </Carousel>
     );

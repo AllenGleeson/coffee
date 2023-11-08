@@ -32,17 +32,17 @@ const Home = () => {
         img={data.coffeeinfo && data.coffeeinfo.img}
         description={data.coffeeinfo && data.coffeeinfo.description}
       /> */}
-      <InstagramFeed />
+      
       <CoffeePreview
         heading={data.coffeeinfo && data.coffeeinfo.heading}
         description={data.coffeeinfo && data.coffeeinfo.description}
         nodes={data.coffeeinfonode && data.coffeeinfonode} />
-      <Book />
       <BrandVideo
         heading={data.brandvideo && data.brandvideo.heading}
         description={data.brandvideo && data.brandvideo.description}
         url={data.brandvideo && data.brandvideo.url}
       />
+      <InstagramFeed />
       <ParallaxHeader heading={data.parallaxheader && data.parallaxheader.heading} subheading={data.parallaxheader && data.parallaxheader.subheading} />
       <About description={data.about && data.about.description} lat={data.about && data.about.lat} lng={data.about && data.about.lng} />
     </div>

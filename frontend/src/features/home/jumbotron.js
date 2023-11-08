@@ -1,12 +1,11 @@
 import React from 'react';
 import temp from '../../assets/temp.webp';
+import MyCarousel from './carousel';
 
 const Jumbotron = ({ heading, subheading }) => {
   return (
     <section className="jumbotron">
-      <div className="cafe-image">
-        <img src={temp} alt="Cafe Interior" />
-      </div>
+      <MyCarousel />
       <div className="caption">
         <h2>{heading}</h2>
         <p>{subheading}</p>

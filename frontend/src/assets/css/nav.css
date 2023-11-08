@@ -10,3 +10,25 @@
 .nav-item{
     margin: 0px;
 }
+
+#nav .navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+#nav .navbar-nav {
+    flex: 1;
+}
+
+#nav .navbar-nav.left {
+    justify-content: flex-end;
+}
+
+#nav .navbar-nav.right {
+    justify-content: flex-start;
+}
+
+.white-background {
+    background-color: white;
+    transition: background-color 0.3s; /* Add a smooth transition effect */
+}
