@@ -22,6 +22,7 @@
     overflow: hidden;
     width: 500px;
     height: 700px;
+    margin-top: 50px;
 }
 
 .bar {
@@ -219,7 +220,7 @@
     position: relative;
     margin: auto;
     width: 500px;
-    height: 200px;
+    height: 100px;
 }
 
 .espresso {

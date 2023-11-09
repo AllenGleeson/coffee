@@ -3,7 +3,7 @@ import '../../assets/css/coffees.css'
 
 const Coffees = () => {
     return (
-        <section className='coffees-section col-5'>
+        <section className='coffees-section col-md-4 col-sm-12'>
             <div className="coffees-container">
                 <div className="bar">
                     <div className="bold"><h3>Bold</h3></div>
