@@ -23,10 +23,6 @@ function ParallaxHeader({ heading, subheading }) {
   return (
     <div className="parallax-container">
       <div className="parallax-background"></div>
-      <div className="parallax-content">
-        <h1>{heading}</h1>
-        <p>{subheading}</p>
-      </div>
     </div>
   );
 }
