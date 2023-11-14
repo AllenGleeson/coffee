@@ -1,0 +1,10 @@
+.video-brand{
+    background-color: #505050;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    height: 100%;
+}
