@@ -1,7 +1,28 @@
-#instafeed{
-    display: flex;
-}
-
-#instafeed img{
+/* instafeed.css */
+#instafeed {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    overflow-x: auto;
+    border-top: 10px solid black;
+  }
+  
+  #instafeed a {
+    border-right: none;
+    overflow: hidden;
+  }
+  
+  #instafeed img {
     width: 100%;
-}
+    height: 100%;
+    transition: transform 0.3s ease;
+  }
+  
+  #instafeed a:not(:nth-child(4n)) {
+    display: block;
+    overflow: hidden;
+    border-right: 2px solid black;
+  }
+  
+  #instafeed img:hover {
+    transform: scale(1.1);
+  }
