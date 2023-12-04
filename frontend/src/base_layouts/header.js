@@ -28,7 +28,7 @@ const Header = () => {
   }, []);
 
   // Define a CSS class based on the scrolling state
-  const headerClass = scrolling ? 'bg-nav white-background' : 'bg-nav';
+  const headerClass = scrolling ? 'bg-nav white-background' : 'scale-bg bg-nav';
 
   return (
     <header className='fixed-top'>
