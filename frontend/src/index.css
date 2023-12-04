@@ -5,8 +5,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(-45deg, #ffffff, #afafaf, #23a6d5, #000000);
   background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 .slideLeft{
