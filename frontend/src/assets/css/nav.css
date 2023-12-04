@@ -37,3 +37,7 @@
     scale: 1.2;
     margin-top: 20px;
 }
+
+.navbar-brand{
+    margin: 0;
+}
