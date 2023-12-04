@@ -8,6 +8,7 @@
   
   #instafeed a {
     border-right: none;
+    border-left: none;
     overflow: hidden;
   }
   
@@ -20,7 +21,13 @@
   #instafeed a:not(:nth-child(4n)) {
     display: block;
     overflow: hidden;
-    border-right: 2px solid black;
+    border-right: 1px solid black;
+  }
+
+  #instafeed a:not(:first-child) {
+    display: block;
+    overflow: hidden;
+    border-left: 1px solid black;
   }
   
   #instafeed img:hover {
