@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     overflow-x: auto;
-    border-top: 10px solid black;
+    border-top: 5px solid black;
   }
   
   #instafeed a {
