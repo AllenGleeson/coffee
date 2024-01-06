@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import MenuTable from '../features/menu/menutable';
+// import MenuTable from '../features/menu/menutable';
 import PDFViewer from '../features/menu/pdfViewer';
 import axios from 'axios';
 import '../assets/css/menu.css';
@@ -21,7 +21,7 @@ function Menu() {
 
   return (
     <section className="align-items-center d-flex justify-content-center menu">
-      <MenuTable items={data.menuitems} />
+      {/* <MenuTable items={data.menuitems} /> */}
       <PDFViewer pdf={data.pdfviewer && data.pdfviewer.pdf_url} />
     </section>
   );
