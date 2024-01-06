@@ -1,5 +1,4 @@
 import React from 'react';
-import temp from '../../assets/temp.webp';
 import MyCarousel from './carousel';
 
 const Jumbotron = ({ heading, subheading }) => {

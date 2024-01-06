@@ -1,6 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import myImage from '../../assets/temp.webp';
+import myImage from '../../assets/images/temp.webp';
 
 
 const MyCarousel = () => {
