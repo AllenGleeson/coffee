@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from .models import Jumbotron, About, CoffeeInfo, CoffeeInfoNode, BrandVideo, ParallaxHeader
+from .models import Jumbotron, About, CoffeeInfo, CoffeeInfoNode, BrandVideo
 
 def index(request):
     """ A view to return JSON data """
@@ -10,7 +10,6 @@ def index(request):
     coffeeinfodata = CoffeeInfo.objects.first()  # Assuming you want the first CoffeeInfo entry
     coffeeinfonodedata = CoffeeInfoNode.objects.all()  # Assuming you want all CoffeeInfoNode entry
     brandvideodata = BrandVideo.objects.first()  # Assuming you want the first BrandVideo entry
-    parallaxheaderdata = ParallaxHeader.objects.first()  # Assuming you want the first ParallaxHeader entry
     
     # Create a dictionary to hold the data
     data = {
@@ -38,10 +37,6 @@ def index(request):
             'heading': brandvideodata.heading if brandvideodata else None,
             'description': brandvideodata.description if brandvideodata else None,
             'url': brandvideodata.url if brandvideodata else None
-        },
-        'parallaxheader': {
-            'heading': parallaxheaderdata.heading if parallaxheaderdata else None,
-            'subheading': parallaxheaderdata.subheading if parallaxheaderdata else None
         }
     }
 

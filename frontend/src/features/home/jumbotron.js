@@ -3,9 +3,9 @@ import MyCarousel from './carousel';
 
 const Jumbotron = ({ heading, subheading }) => {
   return (
-    <section className="jumbotron">
+    <section class="jumbotron">
       <MyCarousel />
-      <div className="caption">
+      <div class="caption">
         <h2>{heading}</h2>
         <p>{subheading}</p>
       </div>

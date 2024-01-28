@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-function ParallaxHeader({ heading, subheading }) {
+function ParallaxHeader() {
   useEffect(() => {
     // Function to handle the scroll event
     const handleScroll = () => {
@@ -21,8 +21,8 @@ function ParallaxHeader({ heading, subheading }) {
   }, []);
 
   return (
-    <div className="parallax-container">
-      <div className="parallax-background"></div>
+    <div class="parallax-container">
+      <div class="parallax-background"></div>
     </div>
   );
 }

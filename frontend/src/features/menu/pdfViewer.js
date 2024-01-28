@@ -6,7 +6,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pd
 
 const PDFViewer = ({ pdf }) => {
   return (
-    <div>
+    <>
       {pdf ? (
         <Document file={pdf}>
         <Page pageNumber={1} renderTextLayer={false} renderAnnotationLayer={false} />
@@ -14,7 +14,7 @@ const PDFViewer = ({ pdf }) => {
       ) : (
         <div>No PDF file specified.</div>
       )}
-    </div>
+    </>
   );
 };
 

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import PDFViewer from '../features/menu/pdfViewer';
 import axios from 'axios';
 import '../assets/css/menu.css';
+import ParallaxHeader from '../features/menu/parallaxHeader';
 
 function Menu() {
   const [data, setData] = useState({ menuitems: [], pdfviewer: null });
@@ -20,9 +21,12 @@ function Menu() {
   }, []);
 
   return (
-    <section className="align-items-center d-flex justify-content-center menu">
-      {/* <MenuTable items={data.menuitems} /> */}
-      <PDFViewer pdf={data.pdfviewer && data.pdfviewer.pdf_url} />
+    <section>
+      <ParallaxHeader />
+      <div class="align-items-center d-flex justify-content-center menu pdf-container">
+        {/* <MenuTable items={data.menuitems} /> */}
+        <PDFViewer pdf={data.pdfviewer && data.pdfviewer.pdf_url} />
+      </div>
     </section>
   );
 }

@@ -24,7 +24,7 @@ function InstagramFeed() {
   useEffect(() => {
     // Initialize Instafeed with your access token and other options
     const feed = new Instafeed({
-      accessToken: 'IGQWROTzJ0UDN6S1RXNnhmVUNxWThqOW1fQW1HX09RbFlUMkFrTGZAvN2oyaUp2WFRZAWHVNYVNCQmRyT3BKRlZAxUTdEaXJ0aE8tWkZAEcTFGdjFVSHc5NG9TZAmlDWmJwNktHYVlKVVpYbXJ6MnMxR29SZAE4yZAFJ2ZA0EZD', // Replace with your Instagram access token
+      accessToken: 'IGQWRNZATVLaW1hZATdMOHNkWXZAwMWFHb0RhODRucUxkQnhTYlRCd2tQbHpfMExGZAnhnS2NDN2ltVklxcGZAwbVlQWk9MVkdaMi16R29FeDhPRU9NdVpBdjNXaHhvWnlCTXFGeUhxaUUxX0ZAGYnVScmhIeEJGSEt6d1EZD', // Replace with your Instagram access token
       limit: 4, // The number of posts to display
       target: 'instafeed', // The ID of the element where you want to display the Instagram feed
       template: template, // Customize the template as needed
