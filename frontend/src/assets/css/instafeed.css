@@ -31,23 +31,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e3e3e387;
+  background-color: #000000;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .image-container:hover .overlay {
-  opacity: 0.75;
+  opacity: 40%;
 }
 
 .instagram-icon {
-  width: 20% !important;
+  width: 15% !important;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.image-container .instagram-image:hover {
-  transform: scale(1.1);
+.image-container:hover {
+  .instagram-image{
+    transform: scale(1.1);
+  }
 }
