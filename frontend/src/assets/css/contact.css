@@ -1,16 +1,20 @@
 /* Add this CSS to your contact.css file or your preferred stylesheet */
-section {
-  text-align: center;
+.contact-section{
+  height: 90vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 form {
   max-width: 400px;
+  color: #fff;
+  text-shadow: 0px 0px 4px #000;
   margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f7f7f7;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  border-radius: 10px;
+  background-color: #7f25a2e6;
+  box-shadow: 0px 0px 5px rgb(255 0 251);
 }
 
 label {
@@ -35,7 +39,6 @@ textarea {
 }
 
 input[type="submit"] {
-  background-color: #007bff;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -46,4 +49,21 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: #0056b3;
+}
+
+.thank-you-message {
+  opacity: 0;
+  color: #fff;
+  width: 50%;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

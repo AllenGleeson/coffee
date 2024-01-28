@@ -49,19 +49,14 @@
     color: white;
 }
 
-.about-left {
-    top: 0;
-    right: 0;
-    background-image: url('../../assets/images/temp.webp'); /* Update with your image URL */
-    background-size: cover;
-    background-position: center center;
+.about-left ul {
+    list-style: none;
 }
 
 .about-left article {
-    bottom: 50px;
-    right: 100px;
-    background: radial-gradient(#04040491, #464646db);
     padding: 30px;
+    text-shadow: 0px 0px 4px black;
+    font-size: 1.26rem;
 }
 
 .map-container{

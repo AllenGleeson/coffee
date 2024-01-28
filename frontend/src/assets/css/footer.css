@@ -1,3 +1,7 @@
 footer a{
     padding: 6px;
 }
+
+footer svg{
+    fill: #fff;
+}

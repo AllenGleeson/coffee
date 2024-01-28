@@ -3,6 +3,7 @@
   grid-template-columns: repeat(4, 1fr);
   overflow-x: auto;
   border-top: 5px solid black;
+  border-bottom: 5px solid black;
 }
 
 .image-container {

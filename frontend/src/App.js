@@ -4,6 +4,7 @@ import Home from './pages/home'
 import Menu from './pages/menu'
 import Contact from './pages/contact'
 import RootLayout from './base_layouts/root_layout'
+import './assets/css/util.css'
 
 function App() {
   return (
