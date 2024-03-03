@@ -1,15 +1,20 @@
 .custom-table {
-    border: 2px solid #ccc; /* Add a border */
-    border-radius: 10px; /* Add border radius for rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    border: 2px solid #ccc;
+    /* Add a border */
+    border-radius: 10px;
+    /* Add border radius for rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Add a subtle box shadow */
 }
 
 .custom-table th {
-    background-color: #f2f2f2; /* Change header background color */
+    background-color: #f2f2f2;
+    /* Change header background color */
 }
 
 .custom-table tbody tr:hover {
-    background-color: #e6e6e6; /* Change row background color on hover */
+    background-color: #e6e6e6;
+    /* Change row background color on hover */
 }
 
 .custom-table tr {
@@ -43,7 +48,7 @@
     z-index: 1;
 }
 
-#left-image{
+#left-image {
     transform: rotateY(70deg);
 }
 
@@ -51,7 +56,7 @@
     transform: scaleX(0.8);
 }
 
-#right-image{
+#right-image {
     transform: rotateY(290deg);
 }
 
@@ -75,7 +80,8 @@
     background-image: url("../../assets/images/temp.webp");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center; /* Center the image horizontally */
+    background-position: center;
+    /* Center the image horizontally */
     z-index: -1;
     object-fit: cover;
     object-position: 50% 50%;

@@ -50,7 +50,7 @@
 }
 
 .image-container:hover {
-  .instagram-image{
+  .instagram-image {
     transform: scale(1.1);
   }
 }

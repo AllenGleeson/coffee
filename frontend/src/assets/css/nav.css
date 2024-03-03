@@ -1,13 +1,13 @@
-#logo{
+#logo {
     width: 100px;
 }
 
-.navbar-nav{
+.navbar-nav {
     display: flex;
     flex-direction: inherit;
 }
 
-.nav-item{
+.nav-item {
     margin: 0px;
 }
 
@@ -30,14 +30,15 @@
 
 .white-background {
     background-color: white;
-    transition: background-color 0.3s; /* Add a smooth transition effect */
+    transition: background-color 0.3s;
+    /* Add a smooth transition effect */
 }
 
-.scale-bg{
+.scale-bg {
     scale: 1.2;
     margin-top: 20px;
 }
 
-.navbar-brand{
+.navbar-brand {
     margin: 0;
 }
