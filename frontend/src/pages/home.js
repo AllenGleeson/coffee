@@ -21,7 +21,7 @@ const Home = () => {
       });
   }, []);
   return (
-    <div>
+    <div className="react-components">
       <Jumbotron heading={data.jumbotron && data.jumbotron.heading} subheading={data.jumbotron && data.jumbotron.subheading} />
       <CoffeePreview
         heading={data.coffeeinfo && data.coffeeinfo.heading}

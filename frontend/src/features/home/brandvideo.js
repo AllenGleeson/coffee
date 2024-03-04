@@ -4,12 +4,10 @@ import SpecialtyCoffeeInfo from './specialtycoffeeinfo'
 
 const BrandVideo = ({ heading, description, url }) => {
     return (
-        <section className='brandvideo-section'>
+        <section className='brand-video-section'>
             <div className="row overflow-hidden">
                 <SpecialtyCoffeeInfo heading={heading} description={description} />
                 <VimeoPlayer videoId={url} />
-                {/* <SpecialtyCoffeeInfo heading={heading} description={description} />
-                <VimeoPlayer videoId={video} /> */}
             </div>
         </section>
     );
