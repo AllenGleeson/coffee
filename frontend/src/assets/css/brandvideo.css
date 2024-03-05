@@ -1,4 +1,9 @@
-.video-brand {
+.brand-video-section {
+    position: relative;
+    width: 100%;
+}
+
+.brand-video {
     background-color: #505050;
     color: #fff;
     display: flex;
@@ -41,6 +46,6 @@
     }
 
     #videoplayer {
-        height: 500px;
+        height: 60vh;
     }
 }

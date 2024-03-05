@@ -4,7 +4,7 @@ import '../../assets/css/brandvideo.css'
 const SpecialtyCoffeeInfo = ({ heading, description }) => {
   return (
     <div className= "col-6 pe-0">
-      <div className='video-brand'>
+      <div className='brand-video'>
         <h2>{heading}</h2>
         <hr></hr>
         <p>{description}</p>
