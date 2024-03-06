@@ -1,22 +1,18 @@
 import React, { useEffect } from 'react';
 import Instafeed from 'instafeed.js';
 import '../../assets/css/instafeed.css';
-import instagramIcon from '../../../src/assets/images/instagram-icon.png'; // Import the Instagram icon image
+import instagramIcon from '../../../src/assets/images/instagram-icon.png';
 
 
 function InstagramFeed() {
   const template = `
     <div class="image-container">
-        <a href="{{link}}" target="_blank">
-            <img class="instagram-image" src="{{image}}" alt="{{caption}}" />
-            <div class="overlay">
-            <img
-                class="instagram-icon"
-                src="${instagramIcon}"
-                alt="Instagram Icon"
-            />
-            </div>
-        </a>
+      <a href="{{link}}" target="_blank">
+        <img class="instagram-image" src="{{image}}" alt="{{caption}}" />
+        <div class="overlay">
+        </div>
+        <img class="instagram-icon" src="${instagramIcon}" alt="Instagram Icon" />
+      </a>
     </div>
   `;
 

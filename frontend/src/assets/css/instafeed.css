@@ -42,11 +42,16 @@
 }
 
 .instagram-icon {
-  width: 15% !important;
+  width: 35% !important;
   position: absolute;
   top: 50%;
   left: 50%;
+  opacity: 0;
   transform: translate(-50%, -50%);
+}
+
+.image-container:hover .instagram-icon {
+  opacity: 80%;
 }
 
 .image-container:hover {
