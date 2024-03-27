@@ -35,15 +35,15 @@ const Header = () => {
       <Navbar className={headerClass} id="nav">
         <Nav className="left">
           <NavItem>
-            <NavLink href="/menu">MENU</NavLink>
+            <NavLink className='nav-button slideRightSmall' href="/menu">MENU</NavLink>
           </NavItem>
         </Nav>
         <Navbar.Brand href="/">
-          <img id="logo" src={logo} alt="logo" />
+          <img id="logo" className='spin-once-fuzzy' src={logo} alt="logo" />
         </Navbar.Brand>
         <Nav className="right">
           <NavItem>
-            <NavLink href="/contact">CONTACT</NavLink>
+            <NavLink className='nav-button slideLeftSmall' href="/contact">CONTACT</NavLink>
           </NavItem>
         </Nav>
       </Navbar>

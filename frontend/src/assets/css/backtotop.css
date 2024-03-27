@@ -1,0 +1,32 @@
+.back-to-top{
+    position: fixed;
+    right: 3rem;
+    bottom: 3rem;
+    animation: 1s ease-out 0s 1 slideInRight;
+}
+
+.back-to-top svg{
+    height: 2rem;
+    width: 2rem;
+    background-color: #8d016e;
+    fill: #fafafa;
+    padding: 5px;
+    border-radius: 1rem;
+    border: 1px solid #fafafa;
+}
+
+.back-to-top svg:hover{
+    background-color: #fafafa;
+    fill: #8d016e;
+    border: 1px solid #8d016e;
+}
+
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(+100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

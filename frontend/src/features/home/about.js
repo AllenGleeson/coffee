@@ -13,8 +13,8 @@ const About = ({ description, lat, lng }) => {
 
   return (
     <section className='row about-us-section mb-3'>
-      <div id='about-us' className='align-items-lg-center col-6 d-flex justify-content-center position-relative slideLeft'>
-        <div className='about-left w-50'>
+      <div id='about-us' className='align-items-lg-center col-sm-12 col-md-6 d-flex justify-content-center position-relative'>
+        <div className='about-left'>
           <article>
             <h3>About Us</h3>
             <hr></hr>
@@ -41,7 +41,7 @@ const About = ({ description, lat, lng }) => {
           </article>
         </div>
       </div>
-      <div id='location' className='col-6 p-0 position-relative slideRight'>
+      <div id='location' className='col-sm-12 col-md-6 p-0 position-relative'>
         {isLoaded ? <Map lat={lat} lng={lng} /> : <div>Loading Map...</div>}
       </div>
     </section>

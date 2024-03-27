@@ -7,7 +7,7 @@ const CoffeePreview = ({ heading, description, nodes }) => {
     return (
         <section className="coffees-temp">
             <section className="row sect--type">
-                <div className='coffeeNodesSection col-md-7 col-sm-12'>
+                <div className='coffeeNodesSection col-lg-6 col-md-12 col-sm-12'>
                     <h1 className="secttitle best--bottom sect--white-text">{heading}</h1>
                     <div className="coffeeNodes&Desc">
                         <div className="coffeeNodes">

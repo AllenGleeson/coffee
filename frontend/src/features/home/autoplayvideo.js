@@ -24,6 +24,8 @@ const VimeoPlayer = ({ videoId }) => {
           muted: true,
           controls: false,
           title: false,
+          maxWidth: 100, // Set the maximum width
+          maxHeight: 100,
         });
       }
     } catch (error) {
@@ -39,7 +41,13 @@ const VimeoPlayer = ({ videoId }) => {
     };
   }, [videoId]);
 
-  return <div id="videoplayer" className="col-6" ref={playerRef} />;
+  return (
+    <div className="col-sm-12 col-md-12 col-lg-6 p-0 overflow-hidden">
+      <div className='vim-container'>
+        <div id="videoplayer" ref={playerRef}/>
+      </div>
+    </div>
+  )
 };
 
 export default VimeoPlayer;

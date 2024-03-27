@@ -4,7 +4,6 @@ import image1 from '../../assets/images/CoffeeBackground-1.png';
 import image2 from '../../assets/images/CoffeeBackground-2.png';
 import image3 from '../../assets/images/CoffeeBackground-3.png';
 
-
 const MyCarousel = () => {
     return (
         <Carousel interval={null}>

@@ -13,8 +13,39 @@ body {
   animation: 2s ease-out 0s 1 slideInLeft;
 }
 
+.slideLeftSmall{
+  animation: 2s ease-out 0s 1 slideInLeftSmall;
+}
+
 .slideRight{
-  animation: 1s ease-out 0s 1 slideInRight;
+  animation: 2s ease-out 0s 1 slideInRight;
+}
+
+.slideRightSmall{
+  animation: 2s ease-out 0s 1 slideInRightSmall;
+}
+
+.spin-once {
+  animation: spin 1s linear;
+}
+
+.fuzzy-animation {
+  animation: fuzzy 1s ease-out;
+}
+
+.spin-once-fuzzy {
+  animation: spin 1s linear, fuzzy 1s ease-out;
+}
+
+@keyframes slideInLeftSmall {
+  0% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
 }
 
 @keyframes slideInLeft {
@@ -23,6 +54,17 @@ body {
   }
   100% {
       transform: translateX(0);
+  }
+}
+
+@keyframes slideInRightSmall {
+  0% {
+      transform: translateX(+100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
   }
 }
 
@@ -44,5 +86,23 @@ body {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fuzzy {
+  0% {
+    filter: blur(10px);
+  }
+  100% {
+    filter: blur(0px);
   }
 }

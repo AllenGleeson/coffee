@@ -6,7 +6,7 @@ const Jumbotron = ({ heading, subheading }) => {
     <section className="jumbotron-section">
       <MyCarousel />
       <div className="caption">
-        <h2>{heading}</h2>
+        <h2 className='text-center'>{heading}</h2>
         <p>{subheading}</p>
       </div>
     </section>

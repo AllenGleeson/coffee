@@ -3,7 +3,7 @@ import '../../assets/css/coffees.css'
 
 const Coffees = () => {
     return (
-        <section className='coffees-temp col-md-4 col-sm-12'>
+        <section className='col-lg-4 col-md-12 col-sm-12'>
             <div className="coffees-container">
                 <div className="bar">
                     <div className="bold"><h3>Bold</h3></div>
@@ -35,11 +35,11 @@ const Coffees = () => {
                 </div>
                 <div className="info">
                     <div className="first">
-                        <h1 className='coffee-name'>doppio</h1>
+                        <h1 className='coffee-name'>Doppio</h1>
                         <p className='coffee-description'>Double shot of espresso. Straight.</p>
                     </div>
                     <div className="second">
-                        <h1 className='coffee-name'>americano</h1>
+                        <h1 className='coffee-name'>Americano</h1>
                         <p className='coffee-description'>Shots of espresso diluted with water</p>
                     </div>
                     <div className="third">
@@ -61,10 +61,10 @@ const Coffees = () => {
                 </div>
             </div>
             <div className="key">
-                <div className="circle espresso"><p className="small coffee-description">espresso</p></div>
-                <div className="circle milk"><p className="small coffee-description">steamed milk</p></div>
-                <div className="circle foam"><p className="small coffee-description">milk foam</p></div>
-                <div className="circle water"><p className="small coffee-description">water</p></div>
+                <div className="circle espresso"><p className="small coffee-description">Espresso</p></div>
+                <div className="circle milk"><p className="small coffee-description">Steamed milk</p></div>
+                <div className="circle foam"><p className="small coffee-description">Milk foam</p></div>
+                <div className="circle water"><p className="small coffee-description">Water</p></div>
             </div>
         </section>
     );
