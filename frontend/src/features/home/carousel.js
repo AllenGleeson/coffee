@@ -6,7 +6,7 @@ import image3 from '../../assets/images/CoffeeBackground-Home-3.webp';
 
 const MyCarousel = () => {
     return (
-        <Carousel interval={null}>
+        <Carousel interval={4000}>
             <Carousel.Item>
                 <img src={image1} />
             </Carousel.Item>
