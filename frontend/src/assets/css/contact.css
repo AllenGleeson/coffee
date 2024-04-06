@@ -6,15 +6,32 @@
   justify-content: center;
 }
 
+.contact-page .parallax-background {
+  background-image: url("../../assets/images/contact-bg.png");
+}
+
+.contact-page .parallax-container {
+  position: fixed;
+  bottom: 0;
+  height: 60vh;
+  width: 100%;
+  overflow: hidden;
+  border-top: 5px black solid;
+  border-bottom: 5px black solid;
+}
+
 form {
   max-width: 400px;
+  position: absolute;
   color: #fff;
   text-shadow: 0px 0px 4px #000;
   margin: 0 auto;
   padding: 25px;
   border-radius: 10px;
-  background-color: #7f25a2e6;
+  background-color: #7f25a2;
   box-shadow: 0px 0px 5px rgb(255 0 251);
+  top: 25%;
+  z-index: 2;
 }
 
 label {
@@ -57,6 +74,8 @@ input[type="submit"]:hover {
   width: 50%;
   text-align: center;
   animation: fadeIn 1s ease-in-out forwards;
+  text-shadow: -0.5px -0.75px 0 #000, 0.5px -0.75px 0 #000, -0.5px 0.75px 0 #000, 0.5px 0.75px 0 #000;
+  z-index: 2;
 }
 
 @media screen and (max-width: 1450px) {

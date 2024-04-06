@@ -62,7 +62,7 @@
 
 .parallax-container {
     position: relative;
-    height: 60vh;
+    height: 35vh;
     width: 100%;
     overflow: hidden;
     border-top: 5px black solid;
@@ -101,4 +101,30 @@
 .pdf-container {
     margin-top: -10%;
     margin-bottom: 1%;
+}
+
+@media screen and (max-width: 600px) {
+    .parallax-container {
+        height: 25vh;
+    }
+    .react-pdf__Document {
+        scale: 0.97;
+    }
+    .react-pdf__Page__canvas{
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    .parallax-container {
+        height: 27vh;
+    }
+    .react-pdf__Document {
+        scale: 0.96;
+    }
+    .react-pdf__Page__canvas{
+        width: 100% !important;
+        height: 100% !important;
+    }
 }

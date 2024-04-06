@@ -85,3 +85,9 @@
 .navbar-brand {
     margin: 0;
 }
+
+@media screen and (max-width: 600px) {
+    #logo {
+        width: 85px;
+    }
+}
