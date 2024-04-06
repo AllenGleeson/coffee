@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { GoogleMap, Marker } from "@react-google-maps/api";
 
-import image from '../../assets/images/MapsMarker.png';
+import image from '../../assets/images/MapsMarker.webp';
 
 function Map({ lat, lng }) {
   const center = useMemo(() => ({ lat, lng }), [lat, lng]);

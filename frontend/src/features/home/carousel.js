@@ -1,8 +1,8 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import image1 from '../../assets/images/CoffeeBackground-1.png';
-import image2 from '../../assets/images/CoffeeBackground-2.png';
-import image3 from '../../assets/images/CoffeeBackground-3.png';
+import image1 from '../../assets/images/CoffeeBackground-Home-1.webp';
+import image2 from '../../assets/images/CoffeeBackground-Home-2.webp';
+import image3 from '../../assets/images/CoffeeBackground-Home-3.webp';
 
 const MyCarousel = () => {
     return (

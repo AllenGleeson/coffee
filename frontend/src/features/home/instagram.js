@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Instafeed from 'instafeed.js';
 import '../../assets/css/instafeed.css';
-import instagramIcon from '../../../src/assets/images/instagram-icon.png';
+import instagramIcon from '../../../src/assets/images/instagram-icon.webp';
 
 
 function InstagramFeed() {
