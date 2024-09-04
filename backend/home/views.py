@@ -1,16 +1,17 @@
 from django.http import JsonResponse
+from django.conf import settings  # Import settings to access the keys
 from .models import Jumbotron, About, CoffeeInfo, CoffeeInfoNode, BrandVideo
 
 def index(request):
     """ A view to return JSON data """
-    
+
     # Query data from your models
     jumbotrondata = Jumbotron.objects.first()  # Assuming you want the first Jumbotron entry
     aboutdata = About.objects.first()  # Assuming you want the first About entry
     coffeeinfodata = CoffeeInfo.objects.first()  # Assuming you want the first CoffeeInfo entry
-    coffeeinfonodedata = CoffeeInfoNode.objects.all()  # Assuming you want all CoffeeInfoNode entry
+    coffeeinfonodedata = CoffeeInfoNode.objects.all()  # Assuming you want all CoffeeInfoNode entries
     brandvideodata = BrandVideo.objects.first()  # Assuming you want the first BrandVideo entry
-    
+
     # Create a dictionary to hold the data
     data = {
         'jumbotron': {
@@ -19,6 +20,9 @@ def index(request):
         },
         'about': {
             'description': aboutdata.description if aboutdata else None,
+            'address': aboutdata.address if aboutdata else None,
+            'phone': aboutdata.phone if aboutdata else None,
+            'email': aboutdata.email if aboutdata else None,
             'lat': aboutdata.lat if aboutdata else None,
             'lng': aboutdata.lng if aboutdata else None
         },

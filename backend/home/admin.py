@@ -7,7 +7,7 @@ class JumbotronAdmin(admin.ModelAdmin):
 
 @admin.register(About)
 class AboutAdmin(admin.ModelAdmin):
-    list_display = ('description', 'lat', 'lng')
+    list_display = ('description', 'address', 'phone', 'email', 'lat', 'lng')
 
 @admin.register(CoffeeInfo)
 class CoffeeInfoAdmin(admin.ModelAdmin):
