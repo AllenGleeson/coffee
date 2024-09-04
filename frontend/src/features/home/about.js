@@ -2,11 +2,11 @@ import React from 'react';
 import Map from './map';
 import { useLoadScript } from '@react-google-maps/api';
 
-const googleMapsApiKey = "INSERT_TOKEN_HERE";
-console.log(googleMapsApiKey);
-const About = ({ description, lat, lng }) => {
+const About = ({ description, address, phone, email, lat, lng }) => {
+  const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey,
+    googleMapsApiKey: apiKey,
   });
 
   if (loadError) return <div>Error loading Google Maps</div>;
@@ -23,17 +23,17 @@ const About = ({ description, lat, lng }) => {
               <ul>
                 <li>
                   <p>
-                    <span className='text-bold me-1'>Address:</span><span>123 Mountain Pass, Spain</span>
+                    <span className='text-bold me-1'>Address:</span><span>{address}</span>
                   </p>
                 </li>
                 <li>
                   <p>
-                    <span className='text-bold me-1'>Phone:</span><span>+3531663123</span>
+                    <span className='text-bold me-1'>Phone:</span><span>{phone}</span>
                   </p>
                 </li>
                 <li>
                   <p>
-                    <span className='text-bold me-1'>Email:</span><span>example@example.com</span>
+                    <span className='text-bold me-1'>Email:</span><span>{email}</span>
                   </p>
                 </li>
               </ul>

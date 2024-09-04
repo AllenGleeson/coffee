@@ -3,8 +3,9 @@ import Instafeed from 'instafeed.js';
 import '../../assets/css/instafeed.css';
 import instagramIcon from '../../../src/assets/images/instagram-icon.webp';
 
-
 function InstagramFeed() {
+  const apiKey = process.env.REACT_APP_INSTAGRAM_API_KEY;
+
   const template = `
     <div class="image-container">
       <a href="{{link}}" target="_blank">
@@ -17,16 +18,21 @@ function InstagramFeed() {
   `;
 
   useEffect(() => {
+    if (!apiKey) {
+      // If apiKey is not defined, don't proceed
+      console.error('Instagram API key is missing.');
+      return;
+    }
     const feed = new Instafeed({
-      accessToken: 'INSERT_TOKEN_HERE',
-      limit: 4,
-      target: 'instafeed',
-      template: template,
-      get: 'user',
+      accessToken: apiKey,
+      limit: 4, // The number of posts to display
+      target: 'instafeed', // The ID of the element where you want to display the Instagram feed
+      template: template, // Customize the template as needed
+      get: 'user', // Use 'user' to avoid duplicates
     });
 
     feed.run();
-  }, []);
+  }, [apiKey, template]);
 
   return (
     <section className='instagram-section'>
