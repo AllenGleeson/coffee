@@ -29,4 +29,4 @@ const CoffeePreview = ({ heading, description, nodes }) => {
     );
 }
 
-export default CoffeePreview
+export default CoffeePreview;

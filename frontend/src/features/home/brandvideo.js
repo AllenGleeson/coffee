@@ -13,4 +13,4 @@ const BrandVideo = ({ heading, description, url }) => {
     );
 }
 
-export default BrandVideo
+export default BrandVideo;

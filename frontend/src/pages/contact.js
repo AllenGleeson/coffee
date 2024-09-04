@@ -2,7 +2,7 @@ import React from 'react'
 import Contact from '../features/contact/contact';
 import ParallaxHeader from '../features/menu/parallaxHeader';
 
-const Home = () => {
+const ContactPage = () => {
     return (
         <div className='contact-page'>
             <Contact />
@@ -11,4 +11,4 @@ const Home = () => {
     );
 }
 
-export default Home
+export default ContactPage;

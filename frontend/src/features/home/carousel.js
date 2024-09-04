@@ -8,13 +8,13 @@ const MyCarousel = () => {
     return (
         <Carousel interval={4000}>
             <Carousel.Item>
-                <img src={image1} />
+                <img src={image1} alt='Cafe Background One' />
             </Carousel.Item>
             <Carousel.Item>
-                <img src={image2} />
+                <img src={image2} alt='Cafe Background Two' />
             </Carousel.Item>
             <Carousel.Item>
-                <img src={image3} />
+                <img src={image3} alt='Cafe Background Three' />
             </Carousel.Item>
         </Carousel>
     );
