@@ -4,9 +4,13 @@ import '../assets/css/backtotop.css'
 
 const BackToTop = () => {
     return (
-        <a href='#' className="back-to-top slideInLeft">
+        <button 
+            className="back-to-top slideInLeft"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            aria-label="Back to top"
+        >
             <FaArrowUp />
-        </a>
+        </button>
     );
 }
 
