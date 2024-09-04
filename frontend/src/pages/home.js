@@ -12,17 +12,22 @@ const Home = () => {
   const [data, setData] = useState({});
 
   useEffect(() => {
-    // Fetch data from the Django backend when the component mounts
-    axios.get('http://localhost:8000/') // Replace with the correct API endpoint
+    const apiUrl = process.env.REACT_APP_API_URL; // Fetch API URL from environment variable
+    axios.get(`${apiUrl}`)
       .then((response) => {
         setData(response.data);
       })
       .catch((error) => {
+        console.error("Error fetching data:", error);
       });
   }, []);
+  
   return (
     <div className="react-components">
-      <Jumbotron heading={data.jumbotron && data.jumbotron.heading} subheading={data.jumbotron && data.jumbotron.subheading} />
+      <Jumbotron
+        heading={data.jumbotron && data.jumbotron.heading}
+        subheading={data.jumbotron && data.jumbotron.subheading}
+      />
       <CoffeePreview
         heading={data.coffeeinfo && data.coffeeinfo.heading}
         description={data.coffeeinfo && data.coffeeinfo.description}
@@ -33,7 +38,14 @@ const Home = () => {
         url={data.brandvideo && data.brandvideo.url}
       />
       <InstagramFeed />
-      <About description={data.about && data.about.description} lat={data.about && data.about.lat} lng={data.about && data.about.lng} />
+      <About
+        description={data.about && data.about.description}
+        address={data.about && data.about.address}
+        phone={data.about && data.about.phone}
+        email={data.about && data.about.email}
+        lat={data.about && data.about.lat}
+        lng={data.about && data.about.lng}
+      />
     </div>
   );
 };
