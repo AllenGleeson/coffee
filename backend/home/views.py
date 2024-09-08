@@ -1,17 +1,26 @@
 from django.http import JsonResponse
-from django.conf import settings  # Import settings to access the keys
+from django.conf import settings
 from .models import Jumbotron, About, CoffeeInfo, CoffeeInfoNode, BrandVideo
+import base64
+
+def encode_base64(data: str) -> str:
+    """Encode data as base64."""
+    return base64.b64encode(data.encode()).decode()
 
 def index(request):
     """ A view to return JSON data """
 
     # Query data from your models
-    jumbotrondata = Jumbotron.objects.first()  # Assuming you want the first Jumbotron entry
-    aboutdata = About.objects.first()  # Assuming you want the first About entry
-    coffeeinfodata = CoffeeInfo.objects.first()  # Assuming you want the first CoffeeInfo entry
-    coffeeinfonodedata = CoffeeInfoNode.objects.all()  # Assuming you want all CoffeeInfoNode entries
-    brandvideodata = BrandVideo.objects.first()  # Assuming you want the first BrandVideo entry
+    jumbotrondata = Jumbotron.objects.first()
+    aboutdata = About.objects.first()
+    coffeeinfodata = CoffeeInfo.objects.first()
+    coffeeinfonodedata = CoffeeInfoNode.objects.all()
+    brandvideodata = BrandVideo.objects.first()
 
+    # Encode API keys
+    google_api_key_encoded = encode_base64(settings.GOOGLE_MAPS_API_KEY)
+    instagram_api_key_encoded = encode_base64(settings.INSTAGRAM_API_KEY)
+    
     # Create a dictionary to hold the data
     data = {
         'jumbotron': {
@@ -41,7 +50,9 @@ def index(request):
             'heading': brandvideodata.heading if brandvideodata else None,
             'description': brandvideodata.description if brandvideodata else None,
             'url': brandvideodata.url if brandvideodata else None
-        }
+        },
+        'google_maps_api_key': google_api_key_encoded,
+        'instagram_api_key': instagram_api_key_encoded,
     }
 
     return JsonResponse(data)

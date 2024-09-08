@@ -2,9 +2,7 @@ import React from 'react';
 import Map from './map';
 import { useLoadScript } from '@react-google-maps/api';
 
-const About = ({ description, address, phone, email, lat, lng }) => {
-  const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
-
+const About = ({ description, address, phone, email, lat, lng, apiKey }) => {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: apiKey,
   });

@@ -3,9 +3,7 @@ import Instafeed from 'instafeed.js';
 import '../../assets/css/instafeed.css';
 import instagramIcon from '../../../src/assets/images/instagram-icon.webp';
 
-function InstagramFeed() {
-  const apiKey = process.env.REACT_APP_INSTAGRAM_API_KEY;
-
+function InstagramFeed({apiKey}) {
   const template = `
     <div class="image-container">
       <a href="{{link}}" target="_blank">
