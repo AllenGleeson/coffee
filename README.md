@@ -22,12 +22,13 @@ ADIG - Coffeeshop is a hybrid Django and React application designed for a coffee
   - **Google Maps:** Shows the location of the coffeeshop.
 - **Database:** Uses PostgreSQL hosted on AWS RDS for reliable data storage.
 - **Responsive Design:** Built with Bootstrap to ensure it looks great on all screen sizes.
-- **PDF Upload:** Allows the upload and display of the menu in PDF format.
+- **PDF Upload:** Allows the upload and display of the menu in PDF format on an AWS S3 bucket.
 
 ### Tech Stack
 - **Backend:** Django
 - **Frontend:** React
 - **Database:** PostgreSQL on AWS RDS
+- **Cloud Storage:** AWS S3 Bucket
 - **Hosting:** Heroku
 - **Styling:** Bootstrap
 
