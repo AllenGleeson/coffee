@@ -1,5 +1,6 @@
 import os
 import environ
+from storages.backends.s3boto3 import S3Boto3Storage
 
 # Initialise environment variables
 env = environ.Env()
@@ -142,6 +143,29 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Media settings
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# AWS S3 Bucket
+USE_AWS = env.bool('USE_AWS', default=False)
+
+if USE_AWS:
+    # AWS credentials
+    AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+    AWS_STORAGE_BUCKET_NAME = 'ellas-design-bucket'
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+    AWS_S3_REGION_NAME = 'eu-west-1'
+
+    AWS_DEFAULT_ACL = None
+
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000'
+    }
+
+    # pdf storage
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'  # Set S3 as the default storage
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/cafe/'  # The base URL for media files
+    MEDIA_ROOT = 'cafe/'  # S3 will use this directory to store media files
+else:
+    # Media settings
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
