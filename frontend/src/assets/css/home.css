@@ -79,7 +79,7 @@
 
 @media screen and (max-width: 600px) {
     .jumbotron-section {
-        height: 50vh;
+        height: 60vh;
     }
     .caption {
         font-size: 1rem !important;
@@ -89,7 +89,7 @@
         font-size: 1.5rem !important;
     }
     .caption {
-        font-size: 1.3rem !important;
+        font-size: 1.1rem !important;
     }
     .about-left article {
         font-size: 1rem !important;

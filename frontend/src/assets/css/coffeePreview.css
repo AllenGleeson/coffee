@@ -1,8 +1,29 @@
-.sect--type {
+/* .sect--type {
     background-image: url('https://i.ibb.co/LJjxYgx/coffee-item-10.jpg');
     background-size: 100% 100%;
     border-bottom: 5px solid black;
     margin: 0 !important;
+} */
+
+.sect--type {
+    position: relative;
+    border-bottom: 5px solid black;
+    margin: 0 !important;
+    z-index: 1;
+}
+
+.sect--type::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://i.ibb.co/LJjxYgx/coffee-item-10.jpg);
+    background-size: 100% 100%;
+    background-position: center;
+    opacity: 0.95;
+    z-index: -1; /* Send the overlay behind the content */
 }
 
 .coffeeNodesSection {
@@ -13,11 +34,24 @@
 }
 
 .coffees-temp {
-    text-shadow: -0.5px -0.75px 0 #fff, 0.5px -0.75px 0 #fff, -0.5px 0.75px 0 #fff, 0.5px 0.75px 0 #fff;
+    text-shadow: -0.5px -0.75px 0 #fff, 0.5px -0.75px 0 #fff, -0.5px 0.75px 0 #fff, 0.5px 0.75px 0 #fff, 0px 0px 2px black;;
 }
 
 @media screen and (max-width: 600px) {
     .sect--type {
         background-size: 200% 100%;
+    }
+    .bestimg{
+        scale: 0.5;
+    }
+    .coffeeNodes .row{
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 0;
+    }
+    .coffeeNodes h2{
+        font-size: 1rem !important;
+    }
+    .sectsubtitle {
+        font-size: 1rem;
     }
 }
