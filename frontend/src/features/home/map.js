@@ -6,7 +6,7 @@ import image from '../../assets/images/MapsMarker.webp';
 function Map({ lat, lng }) {
   const center = useMemo(() => ({ lat, lng }), [lat, lng]);
   return (
-    <GoogleMap zoom={11} center={center} mapContainerClassName="map-container">
+    <GoogleMap zoom={15} center={center} mapContainerClassName="map-container">
       <Marker 
         position={center}
         icon={{

@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Map from './map';
-import { useLoadScript } from '@react-google-maps/api';
+import MapLoader from './maploader';
 
 const About = ({ description, address, phone, email, lat, lng, apiKey }) => {
-  const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: apiKey,
-  });
-
-  if (loadError) return <div>Error loading Google Maps</div>;
+  // Memoize the MapLoader component to avoid re-rendering with different options
+  const mapLoader = useMemo(() => {
+    if (apiKey) {
+      return (
+        <MapLoader key={apiKey} apiKey={apiKey}>
+          <Map lat={lat} lng={lng} />
+        </MapLoader>
+      );
+    } else {
+      return <div>API key is not available</div>;
+    }
+  }, [apiKey, lat, lng]);
 
   return (
     <section className='row about-us-section mb-3'>
@@ -15,7 +22,7 @@ const About = ({ description, address, phone, email, lat, lng, apiKey }) => {
         <div className='about-left'>
           <article>
             <h3>About Us</h3>
-            <hr></hr>
+            <hr />
             <div className='about-us-description'>
               <p>{description}</p>
               <ul>
@@ -40,10 +47,10 @@ const About = ({ description, address, phone, email, lat, lng, apiKey }) => {
         </div>
       </div>
       <div id='location' className='col-sm-12 col-md-6 p-0 position-relative'>
-        {isLoaded ? <Map lat={lat} lng={lng} /> : <div>Loading Map...</div>}
+        {mapLoader}
       </div>
     </section>
   );
-}
+};
 
 export default About;
