@@ -13193,6 +13193,7 @@ footer svg {
     padding: 0;
     border-radius: 100%;
     border: none;
+    z-index: 2;
 }
 
 .back-to-top svg{
