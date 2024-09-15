@@ -1,6 +1,8 @@
 from django.http import JsonResponse
 from .models import PDFViewer
+from django.views.decorators.clickjacking import xframe_options_exempt
 
+@xframe_options_exempt
 def index(request):
     """ A view to return JSON data """
     pdfviewerdata = PDFViewer.objects.first()  # Assuming you want the first PDFViewer entry

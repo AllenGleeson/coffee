@@ -2,11 +2,13 @@ from django.http import JsonResponse
 from django.conf import settings
 from .models import Jumbotron, About, CoffeeInfo, CoffeeInfoNode, BrandVideo
 import base64
+from django.views.decorators.clickjacking import xframe_options_exempt
 
 def encode_base64(data: str) -> str:
     """Encode data as base64."""
     return base64.b64encode(data.encode()).decode()
 
+@xframe_options_exempt
 def index(request):
     """ A view to return JSON data """
 
