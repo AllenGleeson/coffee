@@ -13180,6 +13180,12 @@ textarea.form-control-lg {
     margin: 0;
 }
 
+@media only screen and (max-width: 370px) {
+    .scale-bg {
+        scale: 1;
+    }
+}
+
 @media screen and (max-width: 600px) {
     #logo {
         width: 85px;
