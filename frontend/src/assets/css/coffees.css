@@ -252,16 +252,16 @@
 
 @media screen and (max-width: 370px) {
     .espresso {
-        left: 2%;
+        left: 2% !important;
     }
     .milk {
-        left: 47%;
+        left: 47% !important;
     }
     .foam {
-        left: 2%;
+        left: 2% !important;
     }
     .water {
-        left: 47%;
+        left: 47% !important;
     }
 }
 
