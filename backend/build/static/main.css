@@ -585,18 +585,24 @@ video {
     left: 83%;
 }
 
-@media screen and (max-width: 370px) {
+@media only screen and (max-width: 1450px) {
+    .coffees-container {
+        width: 400px;
+    }
+    .key {
+        width: 480px;
+    }
     .espresso {
-        left: 2% !important;
+        left: 10%;
     }
     .milk {
-        left: 47% !important;
+        left: 35%;
     }
     .foam {
-        left: 2% !important;
+        left: 58%;
     }
     .water {
-        left: 47% !important;
+        left: 75%;
     }
 }
 
@@ -628,26 +634,20 @@ video {
     }
 }
 
-@media only screen and (max-width: 1450px) {
-    .coffees-container {
-        width: 400px;
-    }
-    .key {
-        width: 480px;
-    }
+@media screen and (max-width: 370px) {
     .espresso {
-        left: 10%;
+        left: 2% !important;
     }
     .milk {
-        left: 35%;
+        left: 47% !important;
     }
     .foam {
-        left: 58%;
+        left: 2% !important;
     }
     .water {
-        left: 75%;
+        left: 47% !important;
     }
-}  
+}
 .secttitle {
     margin-top: 0;
     text-transform: uppercase;
