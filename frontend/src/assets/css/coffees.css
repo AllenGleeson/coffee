@@ -250,6 +250,21 @@
     left: 83%;
 }
 
+@media screen and (max-width: 370px) {
+    .espresso {
+        left: 2%;
+    }
+    .milk {
+        left: 47%;
+    }
+    .foam {
+        left: 2%;
+    }
+    .water {
+        left: 47%;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .key {
         width: 100% !important;

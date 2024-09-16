@@ -585,6 +585,21 @@ video {
     left: 83%;
 }
 
+@media screen and (max-width: 370px) {
+    .espresso {
+        left: 2%;
+    }
+    .milk {
+        left: 47%;
+    }
+    .foam {
+        left: 2%;
+    }
+    .water {
+        left: 47%;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .key {
         width: 100% !important;
@@ -1008,6 +1023,12 @@ input[type="submit"]:hover {
   animation: fadeIn 1s ease-in-out forwards;
   text-shadow: -0.5px -0.75px 0 #000, 0.5px -0.75px 0 #000, -0.5px 0.75px 0 #000, 0.5px 0.75px 0 #000;
   z-index: 2;
+}
+
+@media screen and (max-width: 370px) {
+  .contact-section {
+    height: 120vh;
+  }
 }
 
 @media screen and (max-width: 1450px) {
