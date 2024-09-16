@@ -41,7 +41,7 @@
     .coffeeNodes {
         scale: 0.8;
     }
-}  
+}
 
 @media screen and (max-width: 600px) {
     .sect--type {

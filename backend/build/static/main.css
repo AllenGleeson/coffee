@@ -185,6 +185,18 @@ body {
     min-height: 350px;
 }
 
+@media only screen and (max-width: 370px) {
+    .jumbotron-section {
+        height: 70vh;
+    }
+    .caption {
+        margin-top: 2rem;
+    }
+    .coffeeNodes {
+        scale: 0.8;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .jumbotron-section {
         height: 60vh;
@@ -707,7 +719,7 @@ video {
     .coffeeNodes {
         scale: 0.8;
     }
-}  
+}
 
 @media screen and (max-width: 600px) {
     .sect--type {
