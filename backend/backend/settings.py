@@ -1,6 +1,5 @@
 import os
 import environ
-from storages.backends.s3boto3 import S3Boto3Storage
 
 # Initialise environment variables
 env = environ.Env()
@@ -26,11 +25,12 @@ ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
+    # Admin and auth removed - frontend-focused showcase
+    # 'django.contrib.admin',
+    # 'django.contrib.auth',
+    'django.contrib.contenttypes',  # Required for Django's content framework
+    # 'django.contrib.sessions',  # Not needed without auth
+    # 'django.contrib.messages',  # Not needed without admin
     'django.contrib.staticfiles',
     'corsheaders',
     'home',
@@ -40,17 +40,18 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    # 'django.contrib.sessions.middleware.SessionMiddleware',  # Not needed without auth
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',  # Keep for API security
+    # 'django.contrib.auth.middleware.AuthenticationMiddleware',  # Not needed
+    # 'django.contrib.messages.middleware.MessageMiddleware',  # Not needed
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = False
-CORS_ALLOWED_ORIGINS = env.list('CORS_ALLOWED_ORIGINS', default=[])
+# CORS settings - Allow frontend to access API
+CORS_ALLOW_ALL_ORIGINS = True  # Set to True for development, can restrict in production
+# CORS_ALLOWED_ORIGINS = env.list('CORS_ALLOWED_ORIGINS', default=[])
 
 ROOT_URLCONF = 'backend.urls'
 
@@ -63,8 +64,8 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+                # 'django.contrib.auth.context_processors.auth',  # Not needed
+                # 'django.contrib.messages.context_processors.messages',  # Not needed
             ],
         },
     },
@@ -72,48 +73,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
-# Check if USE_SQLITE is true or false
-USE_SQLITE = env.bool('USE_SQLITE', default=True)
-
-if USE_SQLITE:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
+# Database - Minimal config for Django (not actually used - all data is static)
+# Using a file-based SQLite database so migrations persist between server restarts
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),  # File-based database - never actually used for data
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': env("DATABASE_NAME"),
-            'USER': env("DATABASE_USER"),
-            'PASSWORD': env("DATABASE_PASS"),
-            'HOST': env("DATABASE_ENDPOINT"),
-            'PORT': env("DATABASE_PORT"),
-        }
-    }
+}
 
-# Password validation
-# https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
-
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
-]
+# Password validation - REMOVED: No authentication needed for frontend showcase
+# AUTH_PASSWORD_VALIDATORS = []
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
@@ -140,32 +110,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'build/static'),
+    os.path.join(BASE_DIR, 'static'),  # Add this for static PDFs and images
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# AWS S3 Bucket
-USE_AWS = env.bool('USE_AWS', default=False)
-
-if USE_AWS:
-    # AWS credentials
-    AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
-    AWS_STORAGE_BUCKET_NAME = 'ellas-design-bucket'
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-    AWS_S3_REGION_NAME = 'eu-west-1'
-
-    AWS_DEFAULT_ACL = None
-
-    AWS_S3_OBJECT_PARAMETERS = {
-        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-        'CacheControl': 'max-age=94608000'
-    }
-
-    # pdf storage
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'  # Set S3 as the default storage
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/cafe/'  # The base URL for media files
-    MEDIA_ROOT = 'cafe/'  # S3 will use this directory to store media files
-else:
-    # Media settings
-    MEDIA_URL = '/media/'
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# AWS S3 Bucket - REMOVED: Using static files instead
+# Media settings - using local static files only
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

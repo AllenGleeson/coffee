@@ -1,6 +1,3 @@
-from .data.jumbotron import Jumbotron
-from .data.about import About
-from .data.coffeeinfo import CoffeeInfo
-from .data.coffeeinfonode import CoffeeInfoNode
-from .data.brandvideo import BrandVideo
+# Models removed - using static data files instead
+# All data is now stored in home/data/static_data.py
 # Create your models here.

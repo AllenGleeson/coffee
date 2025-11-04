@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 from django.conf import settings
-from .models import Jumbotron, About, CoffeeInfo, CoffeeInfoNode, BrandVideo
+from .data.static_data import STATIC_DATA
 import base64
 from django.views.decorators.clickjacking import xframe_options_exempt
 
@@ -10,49 +10,38 @@ def encode_base64(data: str) -> str:
 
 @xframe_options_exempt
 def index(request):
-    """ A view to return JSON data """
-
-    # Query data from your models
-    jumbotrondata = Jumbotron.objects.first()
-    aboutdata = About.objects.first()
-    coffeeinfodata = CoffeeInfo.objects.first()
-    coffeeinfonodedata = CoffeeInfoNode.objects.all()
-    brandvideodata = BrandVideo.objects.first()
-
-    # Encode API keys
-    google_api_key_encoded = encode_base64(settings.GOOGLE_MAPS_API_KEY)
-    instagram_api_key_encoded = encode_base64(settings.INSTAGRAM_API_KEY)
+    """ A view to return JSON data from static files """
     
-    # Create a dictionary to hold the data
+    # Get API keys (with fallback if not set)
+    try:
+        google_api_key = getattr(settings, 'GOOGLE_MAPS_API_KEY', '')
+        google_api_key_encoded = encode_base64(google_api_key) if google_api_key else ''
+    except Exception:
+        google_api_key_encoded = ''
+    
+    try:
+        instagram_api_key = getattr(settings, 'INSTAGRAM_API_KEY', '')
+        instagram_api_key_encoded = encode_base64(instagram_api_key) if instagram_api_key else ''
+    except Exception:
+        instagram_api_key_encoded = ''
+    
+    # Get static data
+    static_data = STATIC_DATA.copy()
+    
+    # Build absolute URLs for images if needed
+    if static_data.get('coffeeinfonode'):
+        for node in static_data['coffeeinfonode']:
+            if node.get('img') and not node['img'].startswith('http'):
+                # Convert relative paths to absolute URLs
+                node['img'] = request.build_absolute_uri(node['img'])
+    
+    # Create response data
     data = {
-        'jumbotron': {
-            'heading': jumbotrondata.heading if jumbotrondata else None,
-            'subheading': jumbotrondata.subheading if jumbotrondata else None
-        },
-        'about': {
-            'description': aboutdata.description if aboutdata else None,
-            'address': aboutdata.address if aboutdata else None,
-            'phone': aboutdata.phone if aboutdata else None,
-            'email': aboutdata.email if aboutdata else None,
-            'lat': aboutdata.lat if aboutdata else None,
-            'lng': aboutdata.lng if aboutdata else None
-        },
-        'coffeeinfo': {
-            'heading': coffeeinfodata.heading if coffeeinfodata else None,
-            'description': coffeeinfodata.description if coffeeinfodata else None,
-        },
-        'coffeeinfonode': [
-            {
-                'subheading': item.subheading if item else None,
-                'img': item.img if item else None
-            }
-            for item in coffeeinfonodedata
-        ],
-        'brandvideo': {
-            'heading': brandvideodata.heading if brandvideodata else None,
-            'description': brandvideodata.description if brandvideodata else None,
-            'url': brandvideodata.url if brandvideodata else None
-        },
+        'jumbotron': static_data.get('jumbotron', {}),
+        'about': static_data.get('about', {}),
+        'coffeeinfo': static_data.get('coffeeinfo', {}),
+        'coffeeinfonode': static_data.get('coffeeinfonode', []),
+        'brandvideo': static_data.get('brandvideo', {}),
         'google_maps_api_key': google_api_key_encoded,
         'instagram_api_key': instagram_api_key_encoded,
     }
