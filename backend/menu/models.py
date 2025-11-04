@@ -1,2 +1,3 @@
-from .data.pdfviewer import PDFViewer
+# Models removed - using static data files instead
+# All data is now stored in menu/data/static_data.py
 # Create your models here.
