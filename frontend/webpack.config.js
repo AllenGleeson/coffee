@@ -43,11 +43,12 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { from: 'public/static/images', to: 'static/images' }, // Copy images from 'public/static/images' to 'static/images'
+        { from: 'public/static', to: 'static', globOptions: { ignore: ['**/images/**'] } }, // Copy all files from public/static to static (except images which are already copied)
       ],
     }),
     new Dotenv({
-      path: './.env.production', // Path to your production environment variables file
-      safe: true, // Load .env.example to verify the .env variables are all set
+      path: './.env', // Path to your environment variables file
+      safe: false, // Don't require .env.example
       systemvars: true, // Load system environment variables as well
     }),
     new webpack.DefinePlugin({

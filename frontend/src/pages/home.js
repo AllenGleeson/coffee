@@ -25,9 +25,13 @@ const Home = () => {
   }
 
   useEffect(() => {
-    const apiUrl = process.env.REACT_APP_API_URL; // Fetch API URL from environment variable
+    // Default API URL if not set in environment
+    const apiUrl = process.env.REACT_APP_API_URL || 'http://127.0.0.1:8000/api/';
+    console.log('Fetching data from:', apiUrl);
+    
     axios.get(`${apiUrl}`)
       .then((response) => {
+        console.log('Data received:', response.data);
         // Decode API keys
         const decodedData = {
           ...response.data,
@@ -39,6 +43,9 @@ const Home = () => {
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
+        console.error("Error details:", error.response?.data || error.message);
+        // Set empty data structure to prevent crashes
+        setData({});
       });
   }, []);
 

@@ -21,8 +21,8 @@ function ParallaxHeader() {
   }, []);
 
   return (
-    <div class="parallax-container">
-      <div class="parallax-background"></div>
+    <div className="parallax-container">
+      <div className="parallax-background"></div>
     </div>
   );
 }
